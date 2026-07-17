@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Converter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 8px 16px;
+            background: #666;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background: #444;
+        }
+
+        input { width: 80%; padding: 16px; margin: 15px 0; border: 2px solid #ddd; border-radius: 10px; font-size: 18px; text-align: center; }
+        input:focus { outline: none; border-color: #667eea; box-shadow: 0 0 10px rgba(102, 126, 234, 0.4); }
+        button { background: #667eea; color: white; padding: 14px 50px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; margin: 20px 0; }
+        button:hover { background: #5a6fd8; transform: scale(1.05); }
+        h1 { margin: 25px 0; font-size: 32px; min-height: 50px; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Menu</a>
+        
+        <input type="number" id="day" placeholder="(number 1-7)">
+        <h1 id="h1day"></h1>
+        <button onclick="myday()">click</button>
+    </div>
+
+    <script>
+        function myday(){
+            let day = parseInt(document.getElementById("day").value);
+            switch(day){
+                case 1: document.getElementById("h1day").innerHTML="Monday";break;
+                case 2: document.getElementById("h1day").innerHTML="Tuesday";break;
+                case 3: document.getElementById("h1day").innerHTML="Wednesday";break;
+                case 4: document.getElementById("h1day").innerHTML="Thurseday";break;
+                case 5: document.getElementById("h1day").innerHTML="Friday";break;
+                case 6: document.getElementById("h1day").innerHTML="Saturday";break;
+                case 7: document.getElementById("h1day").innerHTML="Sunday";break;
+                default:document.getElementById("h1day").innerHTML="Unknown";
+            }
+        }
+    </script>
+</body>
+</html>
